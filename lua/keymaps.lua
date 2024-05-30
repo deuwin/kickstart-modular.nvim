@@ -48,4 +48,58 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Remap wildmenu keys
+vim.api.nvim_set_keymap('c', '<Up>', 'wildmenumode() ? "<Left>"  : "<Up>"', { expr = true, noremap = true })
+vim.api.nvim_set_keymap('c', '<Down>', 'wildmenumode() ? "<Right>" : "<Down>"', { expr = true, noremap = true })
+vim.api.nvim_set_keymap('c', '<Left>', 'wildmenumode() ? "<Up>"    : "<Left>"', { expr = true, noremap = true })
+vim.api.nvim_set_keymap('c', '<Right>', 'wildmenumode() ? "<Down>"  : "<Right>"', { expr = true, noremap = true })
+
+-- Leave insert mode by hitting jk
+vim.keymap.set('i', 'jk', '<esc>jk')
+vim.keymap.set('i', 'kj', '<esc>kj')
+-- or is this dangerous?
+-- vim.keymap.set('i', 'JK', '<esc>')
+-- vim.keymap.set('i', 'KJ', '<esc>')
+-- also command mode
+vim.keymap.set('c', 'jk', '<C-C>')
+vim.keymap.set('c', 'kj', '<C-C>')
+
+-- quit nvim with ctrl+q
+vim.keymap.set('n', '<C-q>', '<cmd>qa<cr>')
+vim.keymap.set('i', '<C-q>', '<esc><cmd>qa<cr>')
+
+--
+-- Leader key actions
+--
+-- TODO add <leader>qa? or <leader>qq maybe
+-- write file
+vim.keymap.set('n', '<leader>w', ':w<CR>', { silent = true })
+
+-- toggle spellchecking
+vim.keymap.set('n', '<leader>ss', ':setlocal spell!<CR>', { silent = true })
+
+-- turn off search highlighting
+vim.keymap.set('n', '<CR>', ':nohlsearch<CR>', { silent = true })
+
+-- paste without yanking beforehand
+vim.keymap.set({ 'n', 'v' }, '<Leader>p', 'P')
+
+-- zoom a window split
+vim.keymap.set({ 'n', 'v' }, '<Leader>z', '<Cmd>wincmd |<CR>')
+-- rebalance splits
+vim.keymap.set({ 'n', 'v' }, '<Leader>=', '<Cmd>wincmd =<CR>')
+
+-- highlight matching words, like *, but without jumping
+-- https://vimdoc.sourceforge.net/htmldoc/pattern.html#star
+vim.keymap.set({ 'n' }, '<Leader>*', "<Cmd>let @/='\\<'.expand('<cword>').'\\>'<bar>set hlsearch<CR>")
+
+-- add semicolon to end of line
+vim.keymap.set({ 'n' }, '<Leader>;', "m'A;<esc>`'")
+
+-- toggle line numbering
+vim.keymap.set({ 'n' }, '<leader>n', ':setlocal number!<cr>:setlocal relativenumber!<cr>')
+
+-- toggle relative line numbering
+vim.keymap.set({ 'n' }, '<leader>r', ':setlocal relativenumber!<cr>')
+
 -- vim: ts=2 sts=2 sw=2 et
