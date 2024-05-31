@@ -96,10 +96,4 @@ vim.keymap.set({ 'n' }, '<Leader>*', "<Cmd>let @/='\\<'.expand('<cword>').'\\>'<
 -- add semicolon to end of line
 vim.keymap.set({ 'n' }, '<Leader>;', "m'A;<esc>`'")
 
--- toggle line numbering
-vim.keymap.set({ 'n' }, '<leader>n', ':setlocal number!<cr>:setlocal relativenumber!<cr>')
-
--- toggle relative line numbering
-vim.keymap.set({ 'n' }, '<leader>r', ':setlocal relativenumber!<cr>')
-
 -- vim: ts=2 sts=2 sw=2 et
