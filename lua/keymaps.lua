@@ -49,9 +49,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Remap wildmenu keys
-vim.api.nvim_set_keymap('c', '<Up>', 'wildmenumode() ? "<Left>"  : "<Up>"', { expr = true, noremap = true })
-vim.api.nvim_set_keymap('c', '<Down>', 'wildmenumode() ? "<Right>" : "<Down>"', { expr = true, noremap = true })
-vim.api.nvim_set_keymap('c', '<Left>', 'wildmenumode() ? "<Up>"    : "<Left>"', { expr = true, noremap = true })
+vim.api.nvim_set_keymap('c', '<Up>',    'wildmenumode() ? "<Left>"  : "<Up>"',    { expr = true, noremap = true })
+vim.api.nvim_set_keymap('c', '<Down>',  'wildmenumode() ? "<Right>" : "<Down>"',  { expr = true, noremap = true })
+vim.api.nvim_set_keymap('c', '<Left>',  'wildmenumode() ? "<Up>"    : "<Left>"',  { expr = true, noremap = true })
 vim.api.nvim_set_keymap('c', '<Right>', 'wildmenumode() ? "<Down>"  : "<Right>"', { expr = true, noremap = true })
 
 -- Leave insert mode by hitting jk
@@ -65,8 +65,9 @@ vim.keymap.set('c', 'jk', '<C-C>')
 vim.keymap.set('c', 'kj', '<C-C>')
 
 -- quit nvim with ctrl+q
-vim.keymap.set('n', '<C-q>', '<cmd>qa<cr>')
-vim.keymap.set('i', '<C-q>', '<esc><cmd>qa<cr>')
+vim.keymap.set('n', '<C-q>', '<cmd>quitall<cr>')
+vim.keymap.set('i', '<C-q>', '<esc><cmd>quitall<cr>')
+
 
 --
 -- Leader key actions
