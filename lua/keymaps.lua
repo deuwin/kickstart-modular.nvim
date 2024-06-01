@@ -4,6 +4,10 @@
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- turn off search highlighting with <Enter> in normal mode
+vim.keymap.set('n', '<CR>', '<cmd>nohlsearch<CR>', { silent = true })
+-- or completely unset the 'last search pattern' register
+-- nnoremap <silent> <CR> :let @/ = ""<CR>
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -78,15 +82,6 @@ vim.keymap.set('i', '<C-q>', '<esc><cmd>quitall<cr>')
 -- TODO add <leader>qa? or <leader>qq maybe
 -- write file
 vim.keymap.set('n', '<leader>w', ':w<CR>', { silent = true })
-
--- toggle spellchecking
-vim.keymap.set('n', '<leader>ss', ':setlocal spell!<CR>', { silent = true })
-
--- turn off search highlighting
-vim.keymap.set('n', '<CR>', ':nohlsearch<CR>', { silent = true })
-
--- paste without yanking beforehand
-vim.keymap.set({ 'n', 'v' }, '<Leader>p', 'P')
 
 -- zoom a window split
 vim.keymap.set({ 'n', 'v' }, '<Leader>z', '<Cmd>wincmd |<CR>')
