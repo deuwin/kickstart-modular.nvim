@@ -19,7 +19,7 @@ return {
             function()
                 possession.list()
             end,
-            { desc = "[P]ossession,n [L]ist existing sessions" }
+            { desc = "[P]ossession, [L]ist existing sessions" }
         )
         vim.keymap.set("n", "<leader>pn",
             function()
