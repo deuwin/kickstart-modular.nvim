@@ -38,11 +38,11 @@ return {
   },
   cmd = "Neotree",
   keys = {
-    { '\\',         '<Cmd>Neotree reveal left<CR>',               { desc = 'NeoTree reveal', silent = true } },
-    { '<Leader>nr', '<Cmd>Neotree reveal left<CR>',               { desc = '[N]eoTree [R]eveal', silent = true } },
-    { '<Leader>nf', '<Cmd>Neotree float reveal_force_cwd<CR>',    { desc = '[N]eoTree [F]loat', silent = true } },
-    { '<Leader>ng', '<Cmd>Neotree float git_status<CR>',          { desc = '[N]eoTree [G]it status', silent = true  } },
-    { '<Leader>nb', '<Cmd>Neotree toggle show buffers right<CR>', { desc = '[N]eoTree [B]uffers show', silent = true  } },
+    { '\\',         '<Cmd>Neotree reveal left<CR>',               desc = 'NeoTree reveal',           silent = true },
+    { '<Leader>nr', '<Cmd>Neotree reveal left<CR>',               desc = '[N]eoTree [R]eveal',       silent = true },
+    { '<Leader>nf', '<Cmd>Neotree float reveal_force_cwd<CR>',    desc = '[N]eoTree [F]loat',        silent = true },
+    { '<Leader>ng', '<Cmd>Neotree float git_status<CR>',          desc = '[N]eoTree [G]it status',   silent = true },
+    { '<Leader>nb', '<Cmd>Neotree toggle show buffers right<CR>', desc = '[N]eoTree [B]uffers show', silent = true },
   },
   opts = {
     auto_clean_after_session_restore = false,
