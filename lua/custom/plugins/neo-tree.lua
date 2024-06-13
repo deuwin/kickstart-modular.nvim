@@ -9,32 +9,7 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-    {
-      's1n7ax/nvim-window-picker',
-      version = '2.*',
-      config = function()
-        require 'window-picker'.setup({
-          hint = 'floating-big-letter',
-          picker_config = {
-            floating_big_letter = {
-              font = 'ansi-shadow'
-            },
-          },
-          filter_rules = {
-            include_current_win = false,
-            autoselect_one = true,
-            -- filter using buffer options
-            bo = {
-              -- the window will be ignored
-              -- if the file type is one of following,
-              filetype = { 'neo-tree', "neo-tree-popup", "notify" },
-              -- or if the buffer type is one of following
-              buftype = { 'terminal', "quickfix", "nofile" },
-            },
-          },
-        })
-      end,
-    },
+    "s1n7ax/nvim-window-picker",
   },
   cmd = "Neotree",
   keys = {
