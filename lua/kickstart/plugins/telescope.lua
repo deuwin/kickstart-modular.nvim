@@ -63,8 +63,8 @@ return {
           mappings = {
             i = {
               -- ['<c-enter>'] = 'to_fuzzy_refine',
-              ['jk'] = "close",
-              ['kj'] = "close",
+              ['jk'] = 'close',
+              ['kj'] = 'close',
               -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#using-nvim-window-picker-to-choose-a-target-window-when-opening-a-file-from-any-picker
               ['<C-g>'] = function(prompt_bufnr)
                 -- Use nvim-window-picker to choose the window by dynamically attaching a function
@@ -76,8 +76,9 @@ return {
                   local picked_window_id = require('window-picker').pick_window({
                     filter_rules = {
                       autoselect_one = true,
-                      include_current_win = true,}}
-                  ) or vim.api.nvim_get_current_win()
+                      include_current_win = true,
+                    }
+                  }) or vim.api.nvim_get_current_win()
                   -- Unbind after using so next instance of the picker acts normally
                   picker.get_selection_window = nil
                   return picked_window_id
