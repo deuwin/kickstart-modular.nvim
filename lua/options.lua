@@ -126,6 +126,8 @@ vim.opt.formatoptions = 'jcroql'
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
+-- existing tabs are four columns wide
+vim.opt.tabstop = 4
 -- round indent to multiple of 'shiftwidth'.  Applies to > and <
 vim.opt.shiftround = true
 
